@@ -8,34 +8,27 @@ public class Produto {
         private int quant;
         
         
-	public Produto(String nome, double preco) {
+	public Produto(String nome, double preco, int id, int quant) {
 		this.nome = nome;
 		this.preco = preco;
+                this.id=  id;
+                this.quant = quant;
 	}
 
 	public double getPreco() {
 		return preco;
 	}
         
-	public boolean equals(Object obj) {
-		Produto p = (Produto) obj;
-		return nome.equals(p.nome);
+        public void setPreco(float preco) {
+		this.preco = preco;
 	}
         
-        public String getName() {
+        public String getNome() {
 		return nome;
 	}
 	
-	public void setName(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	
-	public double getPrice() {
-		return preco;
-	}
-
-	public void setPrice(float preco) {
-		this.preco = preco;
 	}
 	
 	public int getQuant() {
@@ -50,10 +43,11 @@ public class Produto {
 		return id;
 	}
 
-	@Override
-	public String toString() {
-		return "Produto [nome=" + nome + ", quantidade=" + quant + ", id="
-				+ id + ", preco=" + preco + "]";
+            
+        @Override
+        public boolean equals(Object obj) {
+		Produto p = (Produto) obj;
+		return nome.equals(p.nome);
 	}
         
         
